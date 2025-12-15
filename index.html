@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirotov Architects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f5f1eb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 4%;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 4%;
+            position: relative;
+        }
+
+        .main-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(48px, 10vw, 140px);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+            line-height: 0.95;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            position: absolute;
+            right: 8%;
+            top: 45%;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-align: right;
+            line-height: 1.8;
+        }
+
+        .copyright {
+            position: absolute;
+            right: 4%;
+            top: 30%;
+            font-size: 24px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+            margin-top: 3rem;
+        }
+
+        .section {
+            padding: 5rem 4%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .section-number {
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            margin-top: 3rem;
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 6rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .headshot-container {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .headshot {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .headshot-caption {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: #5a5a5a;
+            line-height: 1.6;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .column h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .column p {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.8;
+            color: #3a3a3a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1px;
+            background-color: #1a1a1a;
+            margin-top: 4rem;
+        }
+
+        .project-item {
+            background-color: #f5f1eb;
+            aspect-ratio: 4/3;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .project-item:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(26,26,26,0.8) 0%, transparent 100%);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .project-item:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        .project-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .project-type {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .service-item {
+            padding: 2rem 0;
+        }
+
+        .service-number {
+            font-size: 48px;
+            font-weight: 200;
+            color: #d9cdb8;
+            margin-bottom: 1rem;
+        }
+
+        .service-name {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .service-description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #3a3a3a;
+        }
+
+        .contact-section {
+            background-color: #2a2421;
+            color: #f5f1eb;
+            padding: 8rem 4%;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: clamp(32px, 6vw, 72px);
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            margin: 2rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info a {
+            color: #f5f1eb;
+            text-decoration: none;
+            border-bottom: 1px solid #f5f1eb;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            margin-top: 2rem;
+            border: 1px solid #f5f1eb;
+            color: #f5f1eb;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f5f1eb;
+            color: #2a2421;
+        }
+
+        footer {
+            background-color: #f5f1eb;
+            padding: 3rem 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* Gallery Modal Styles */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 26, 0.95);
+            z-index: 1000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .gallery-modal.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .gallery-header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(26, 26, 26, 0.95);
+            padding: 2rem 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(245, 241, 235, 0.2);
+            z-index: 10;
+        }
+
+        .gallery-title-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: #f5f1eb;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-title-section p {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 14px;
+            color: #d9cdb8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .close-gallery {
+            font-size: 40px;
+            color: #f5f1eb;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .close-gallery:hover {
+            transform: rotate(90deg);
+        }
+
+        .gallery-content {
+            padding: 4rem 4%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-image-container {
+            aspect-ratio: 4/3;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .project-description {
+            color: #f5f1eb;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        @media (max-width: 968px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .headshot-container {
+                position: static;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .subtitle {
+                position: static;
+                text-align: center;
+                margin-top: 2rem;
+            }
+
+            .copyright {
+                position: static;
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-title-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div>RENEE GOLOBIC</div>
+        <div>ELEVEN28 ARCHITECTURE</div>
+        <div>DECEMBER 2024</div>
+    </div>
+
+    <section class="hero-section">
+        <h1 class="main-title">ELEVEN28</h1>
+        <div class="subtitle">
+            architectural<br>
+            design
+        </div>
+        <div class="copyright">©</div>
+        <div class="hero-image" style="background-image: url('images/heroimage.jpg');"></div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-number">01 /</div>
+            <div class="section-title">ABOUT RENEE</div>
+        </div>
+        <div class="about-layout">
+            <div class="headshot-container">
+                <div class="headshot" style="background-image: url('images/headshot.jpg');"></div>
+                <div class="headshot-caption">
+                    Renee Golobic<br>
+                    Principal Architect<br>
+                    Eleven28 Architecture
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="column">
+                    <h3>Meet Renee Golobic</h3>
+                    <p>With a passion for creating thoughtful, timeless spaces, Renee brings years of architectural expertise to every project. Her approach combines functionality with aesthetic excellence, ensuring each design tells a unique story.</p>
+                </div>
+                <div class="column">
+                    <h3>Philosophy</h3>
+                    <p>At Eleven28, we believe architecture should enhance the way people live and experience their surroundings. Every project is approached with careful attention to detail, client vision, and the natural environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-number">02 /</div>
+            <div class="section-title">FEATURED PROJECTS</div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-item" onclick="openGallery('12th Street')">
+                <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(12\).jpg');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">12th street *PLACEHOLDER*</div>
+                    <div class="project-type">Residential</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="openGallery('Marine St')">
+                <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(4\).jpg');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">Marine St *PLACEHOLDER*</div>
+                    <div class="project-type">Residential</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="openGallery('Shoreline')">
+                <div class="project-image" style="background-image: url('images/Shoreline/9829\ Shoreline\ Dr-5.jpg');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">Shoreline</div>
+                    <div class="project-type">Residential</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="openGallery('project')">
+                <div class="project-image" style="background-image: url('INSERTHERE');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">project</div>
+                    <div class="project-type">project</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="openGallery('project')">
+                <div class="project-image" style="background-image: url('INSERTHERE');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">project</div>
+                    <div class="project-type">project</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="openGallery('project')">
+                <div class="project-image" style="background-image: url('INSERTHERE');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">project</div>
+                    <div class="project-type">project</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-number">03 /</div>
+            <div class="section-title">OUR SERVICES</div>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-number">01</div>
+                <div class="service-name">Residential Design</div>
+                <div class="service-description">Custom home design tailored to your lifestyle, from initial concept through construction documentation.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-number">02</div>
+                <div class="service-name">Commercial Projects</div>
+                <div class="service-description">Functional and inspiring workplace environments that enhance productivity and wellbeing.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-number">03</div>
+                <div class="service-name">Interior Design</div>
+                <div class="service-description">Complete interior solutions that reflect your aesthetic while maximizing functionality.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-number">04</div>
+                <div class="service-name">Consultation</div>
+                <div class="service-description">Expert guidance on feasibility, planning, and design direction for your project.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2 class="contact-title">Let's Work Together</h2>
+        <div class="contact-info">
+            <p><a href="mailto:renee@eleven28.com">renee@eleven28.com</a></p>
+            <p>(555) 123-4567</p>
+        </div>
+        <a href="mailto:renee@eleven28.com" class="cta-button">Start a Project</a>
+    </section>
+
+    <footer>
+        <div>© 2024 Eleven28 Architecture</div>
+        <div>All Rights Reserved</div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <div class="gallery-header">
+            <div class="gallery-title-section">
+                <h2 id="galleryProjectName"></h2>
+                <p id="galleryProjectType"></p>
+            </div>
+            <button class="close-gallery" onclick="closeGallery()">×</button>
+        </div>
+        <div class="gallery-content">
+            <p class="project-description" id="projectDescription"></p>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </div>
+
+    <script>
+        // Project data with gallery images
+        const projects = {
+            lakeside: {
+                name: "Lakeside Residence",
+                type: "Residential",
+                description: "A modern lakeside home that seamlessly blends indoor and outdoor living spaces. Floor-to-ceiling windows capture stunning water views while natural materials create a warm, inviting atmosphere.",
+                images: [
+                    "INSERTHERE", // Image 1
+                    "INSERTHERE", // Image 2
+                    "INSERTHERE", // Image 3
+                    "INSERTHERE", // Image 4
+                    "INSERTHERE", // Image 5
+                    "INSERTHERE"  // Image 6
+                ]
+            },
+            downtown: {
+                name: "Downtown Office",
+                type: "Commercial",
+                description: "A collaborative workspace designed to inspire creativity and productivity. Open floor plans, natural light, and flexible meeting spaces create an environment where ideas flourish.",
+                images: [
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE"
+                ]
+            },
+            coastal: {
+                name: "Coastal Retreat",
+                type: "Residential",
+                description: "Perched on the coast, this retreat embraces its dramatic setting with expansive decks and weather-resistant materials. The design celebrates the raw beauty of the oceanfront location.",
+                images: [
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE"
+                ]
+            },
+            urban: {
+                name: "Urban Loft",
+                type: "Interior Design",
+                description: "An industrial loft transformation that preserves original character while introducing contemporary comfort. Exposed brick, custom millwork, and curated lighting create a sophisticated urban sanctuary.",
+                images: [
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE"
+                ]
+            },
+            mountain: {
+                name: "Mountain Cabin",
+                type: "Residential",
+                description: "A mountain retreat that honors its natural surroundings through sustainable design and local materials. Large windows frame mountain vistas while maintaining intimate, cozy gathering spaces.",
+                images: [
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE"
+                ]
+            },
+            gallery: {
+                name: "Gallery Space",
+                type: "Commercial",
+                description: "A contemporary art gallery with flexible exhibition spaces and carefully controlled lighting. Clean lines and neutral finishes allow artwork to take center stage.",
+                images: [
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE",
+                    "INSERTHERE"
+                ]
+            }
+        };
+
+        function openGallery(projectId) {
+            const project = projects[projectId];
+            const modal = document.getElementById('galleryModal');
+            
+            document.getElementById('galleryProjectName').textContent = project.name;
+            document.getElementById('galleryProjectType').textContent = project.type;
+            document.getElementById('projectDescription').textContent = project.description;
+            
+            const galleryGrid = document.getElementById('galleryGrid');
+            galleryGrid.innerHTML = '';
+            
+            project.images.forEach(imageUrl => {
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'gallery-image-container';
+                imageDiv.style.backgroundImage = `url('${imageUrl}')`;
+                galleryGrid.appendChild(imageDiv);
+            });
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close gallery when clicking outside the content
+        document.getElementById('galleryModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGallery();
+            }
+        });
+
+        // Close gallery with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeGallery();
+            }
+        });
+    </script>
+</body>
+</html>
