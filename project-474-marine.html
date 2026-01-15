@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Eleven28 Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f5f1eb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4%;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background-color: rgba(245, 241, 235, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .back-button {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            opacity: 0.6;
+        }
+
+        .logo {
+            font-weight: 600;
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        .project-hero {
+            padding: 4rem 4%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .project-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 14px;
+            color: #5a5a5a;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        .project-description {
+            max-width: 800px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 4rem;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            padding: 0 4%;
+            max-width: 1600px;
+            margin: 0 auto 6rem;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .contact-section {
+            background-color: #2a2421;
+            color: #f5f1eb;
+            padding: 6rem 4%;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: clamp(24px, 5vw, 48px);
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin: 1.5rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info a {
+            color: #f5f1eb;
+            text-decoration: none;
+            border-bottom: 1px solid #f5f1eb;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            margin-top: 2rem;
+            border: 1px solid #f5f1eb;
+            color: #f5f1eb;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f5f1eb;
+            color: #2a2421;
+        }
+
+        footer {
+            background-color: #f5f1eb;
+            padding: 3rem 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 968px) {
+            main {
+                padding-top: 60px;
+            }
+
+            .top-bar {
+                padding: 1rem 4%;
+            }
+
+            .project-images {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-bar">
+        <a href="index.html" class="back-button">← BACK TO HOME</a>
+        <div class="logo">ELEVEN28 ARCHITECTURE + DESIGN</div>
+    </nav>
+
+    <main>
+        <section class="project-hero">
+            <h1 class="project-title">474 Marine St</h1>
+            <p class="project-meta">Residential • Marine St, Boulder CO • Year</p>
+            <div class="project-description">
+                <p>Project description</p>
+            </div>
+        </section>
+
+        <section class="project-images">
+            <!-- Add image divs here - example below -->
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(10\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(11\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(12\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(13\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(14\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(15\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(16\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(17\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(1\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(2\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(3\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(4\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(5\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(6\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(7\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(8\).jpg');"></div>
+            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(9\).jpg');"></div>
+
+
+
+        </section>
+
+        <section class="contact-section">
+            <h2 class="contact-title">Interested in Working Together?</h2>
+            <div class="contact-info">
+                <p><a href="mailto:renee@eleven28.com">renee@eleven28.com</a></p>
+                <p><a href="tel:7208370527">720.837.0527</a></p>
+            </div>
+            <a href="index.html#contact" class="cta-button">Get In Touch</a>
+        </section>
+
+        <footer>
+            <div>© 2025 Eleven28 LLC - All Rights Reserved</div>
+            <div>Boulder, Colorado</div>
+        </footer>
+    </main>
+</body>
+</html>

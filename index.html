@@ -22,12 +22,47 @@
         }
 
         .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: space-between;
-            padding: 2rem 4%;
+            align-items: center;
+            padding: 1.5rem 4%;
             font-size: 11px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
+            background-color: rgba(245, 241, 235, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.6;
+        }
+
+        .logo {
+            font-weight: 600;
+        }
+
+        main {
+            padding-top: 80px;
         }
 
         .hero-section {
@@ -165,7 +200,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1px;
             background-color: #1a1a1a;
             margin-top: 4rem;
@@ -222,6 +257,46 @@
             font-weight: 400;
             letter-spacing: 1px;
             text-transform: uppercase;
+        }
+
+        .gallery-cta-section {
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .gallery-cta-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .gallery-cta-subtitle {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            color: #5a5a5a;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .gallery-cta-button {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background-color: #2a2421;
+            color: #f5f1eb;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid #2a2421;
+        }
+
+        .gallery-cta-button:hover {
+            background-color: transparent;
+            color: #2a2421;
         }
 
         .services-grid {
@@ -420,6 +495,21 @@
         }
 
         @media (max-width: 968px) {
+            main {
+                padding-top: 60px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 4%;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                font-size: 10px;
+            }
+
             .two-column {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -472,105 +562,88 @@
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div>RENEE GOLOBIC</div>
-        <div>ELEVEN28 ARCHITECTURE</div>
-        <div>DECEMBER 2024</div>
-    </div>
+    <nav class="top-bar">
+        <div class="logo">ELEVEN28 ARCHITECTURE + DESIGN</div>
+        <ul class="nav-menu">
+            <li><a onclick="scrollToSection('about')">ABOUT</a></li>
+            <li><a onclick="scrollToSection('work')">WORK</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a onclick="scrollToSection('contact')">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main>
 
     <section class="hero-section">
         <h1 class="main-title">ELEVEN28</h1>
-        <div class="subtitle">
-            architectural<br>
-            design
-        </div>
-        <div class="copyright">©</div>
         <div class="hero-image" style="background-image: url('images/heroimage.jpg');"></div>
     </section>
 
-    <section class="section">
+    <section id="about" class="section">
         <div class="section-header">
             <div class="section-number">01 /</div>
-            <div class="section-title">ABOUT RENEE</div>
+            <div class="section-title">ABOUT</div>
         </div>
-        <div class="about-layout">
-            <div class="headshot-container">
-                <div class="headshot" style="background-image: url('images/headshot.jpg');"></div>
-                <div class="headshot-caption">
-                    Renee Golobic<br>
-                    Principal Architect<br>
-                    Eleven28 Architecture
-                </div>
-            </div>
-            <div class="about-content">
+        
+        <!-- The Firm -->
+        <div style="margin-bottom: 5rem;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 500; margin-bottom: 2rem; letter-spacing: 1px; text-transform: uppercase;">The Firm</h3>
+            <div class="two-column">
                 <div class="column">
-                    <h3>Meet Renee Golobic</h3>
-                    <p>With a passion for creating thoughtful, timeless spaces, Renee brings years of architectural expertise to every project. Her approach combines functionality with aesthetic excellence, ensuring each design tells a unique story.</p>
+                    <p style="font-weight: 500;">Eleven28 Architecture + Design creates thoughtful, site-responsive residential architecture rooted in context, craft, and stewardship. We approach each project with clarity around design, budget, and construction, delivering work that is enduring, responsible, and deeply connected to place</p>
+                    <div style="width: 100%; aspect-ratio: 4/3; background-size: cover; background-position: center; margin-top: 2rem; background-image: url('images/about.jpg');"></div>
                 </div>
                 <div class="column">
-                    <h3>Philosophy</h3>
-                    <p>At Eleven28, we believe architecture should enhance the way people live and experience their surroundings. Every project is approached with careful attention to detail, client vision, and the natural environment.</p>
+                    <p>Eleven28 Architecture is a Boulder-based architectural studio providing residential design services throughout Colorado's Front Range. Founded by licensed architect Renee Golobic, the firm is known for thoughtful, site-responsive design rooted in technical rigor, regulatory fluency, and a deep understanding of how people live in—and move through—their homes.</p>
+                    <br>
+                    <p>Eleven28 Architecture is closely involved in every phase of each project, from early feasibility studies and entitlement analysis through design development, permitting, and construction coordination. The firm works collaboratively with clients, builders, engineers, and city staff to ensure that design intent is carried through from concept to completion. Rather than pursuing a singular stylistic approach, Eleven28 prioritizes balance—aligning client goals with site constraints, neighborhood context, budget realities, and what is realistically approvable for each property.</p>
+                    <br>
+                    <p>The practice has extensive experience with remodels, additions, accessory dwelling units, and new residential construction, including projects within sensitive regulatory environments. Eleven28 regularly works with historic and older homes and has deep familiarity with the City of Boulder's Historic Preservation Program and related review processes. This experience allows the firm to navigate complex approvals efficiently while advocating for architecture that respects existing character and supports contemporary living.</p>
+                    <br>
+                    <p>At its core, Eleven28 Architecture is committed to clarity, durability, and stewardship—creating well-crafted spaces that respond intelligently to place, policy, and the long-term needs of the families who inhabit them.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="section-header">
-            <div class="section-number">02 /</div>
-            <div class="section-title">FEATURED PROJECTS</div>
-        </div>
-        <div class="projects-grid">
-            <div class="project-item" onclick="openGallery('12th Street')">
-                <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(12\).jpg');"></div>
-                <div class="project-overlay">
-                    <div class="project-name">12th street *PLACEHOLDER*</div>
-                    <div class="project-type">Residential</div>
+        <!-- The Architect -->
+        <div style="margin-bottom: 5rem;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 500; margin-bottom: 2rem; letter-spacing: 1px; text-transform: uppercase;">The Architect</h3>
+            <div class="about-layout">
+                <div class="headshot-container">
+                    <div class="headshot" style="background-image: url('images/headshot.jpg');"></div>
+                    <div class="headshot-caption">
+                        Renee Golobic, AIA<br>
+                        Founder + Principal Architect<br>
+                        Eleven28 Architecture + Design
+                    </div>
                 </div>
-            </div>
-            <div class="project-item" onclick="openGallery('Marine St')">
-                <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(4\).jpg');"></div>
-                <div class="project-overlay">
-                    <div class="project-name">Marine St *PLACEHOLDER*</div>
-                    <div class="project-type">Residential</div>
-                </div>
-            </div>
-            <div class="project-item" onclick="openGallery('Shoreline')">
-                <div class="project-image" style="background-image: url('images/Shoreline/9829\ Shoreline\ Dr-5.jpg');"></div>
-                <div class="project-overlay">
-                    <div class="project-name">Shoreline</div>
-                    <div class="project-type">Residential</div>
-                </div>
-            </div>
-            <div class="project-item" onclick="openGallery('project')">
-                <div class="project-image" style="background-image: url('INSERTHERE');"></div>
-                <div class="project-overlay">
-                    <div class="project-name">project</div>
-                    <div class="project-type">project</div>
-                </div>
-            </div>
-            <div class="project-item" onclick="openGallery('project')">
-                <div class="project-image" style="background-image: url('INSERTHERE');"></div>
-                <div class="project-overlay">
-                    <div class="project-name">project</div>
-                    <div class="project-type">project</div>
-                </div>
-            </div>
-            <div class="project-item" onclick="openGallery('project')">
-                <div class="project-image" style="background-image: url('INSERTHERE');"></div>
-                <div class="project-overlay">
-                    <div class="project-name">project</div>
-                    <div class="project-type">project</div>
+                <div class="about-content">
+                    <div class="column">
+                        <h3>Renee Golobic, AIA</h3>
+                        <h4 style="font-family: 'Urbanist', sans-serif; font-size: 16px; font-weight: 400; margin-bottom: 2rem; color: #5a5a5a; text-transform: none; letter-spacing: 0.5px;">Founder + Principal Architect</h4>
+                        <p>Renee Golobic is the Founder and Principal Architect of Eleven28 Architecture, a Boulder-based residential practice serving communities across Colorado's Front Range. With over a decade of experience, she brings a disciplined, site-specific approach to residential design, guiding projects from early feasibility through permitting and construction.</p>
+                        <br>
+                        <p>Her work is informed by a deep understanding of local codes, historic contexts, and entitlement processes, allowing her to translate complex constraints into clear, livable architecture. Renee is a licensed Architect in Colorado and currently serves as Chair of the Boulder Landmarks Board, contributing a civic-minded perspective to her practice.</p>
+                        <br>
+                        <div style="padding-top: 1rem; border-top: 1px solid #d9cdb8; margin-top: 1rem;">
+                            <p style="font-size: 14px; color: #5a5a5a; line-height: 1.8;">
+                                <strong>Education:</strong><br>
+                                Master of Architecture<br>
+                                Bachelor of Science in Architecture
+                            </p>
+                            <br>
+                            <p style="font-size: 14px; color: #5a5a5a; line-height: 1.8;">
+                                <strong>Professional Affiliations:</strong><br>
+                                American Institute of Architects (AIA)<br>
+                                Chair, Boulder Landmarks Board
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="section-header">
-            <div class="section-number">03 /</div>
-            <div class="section-title">OUR SERVICES</div>
-        </div>
+        <!-- Services -->
         <div class="services-grid">
             <div class="service-item">
                 <div class="service-number">01</div>
@@ -595,159 +668,80 @@
         </div>
     </section>
 
-    <section class="contact-section">
-        <h2 class="contact-title">Let's Work Together</h2>
-        <div class="contact-info">
-            <p><a href="mailto:renee@eleven28.com">renee@eleven28.com</a></p>
-            <p>(555) 123-4567</p>
+    <section id="work" class="section">
+        <div class="section-header">
+            <div class="section-number">02 /</div>
+            <div class="section-title">WORK</div>
         </div>
-        <a href="mailto:renee@eleven28.com" class="cta-button">Start a Project</a>
+        <div class="projects-grid">
+            <div class="project-item" onclick="window.location.href='project-12th-street.html'">
+                <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(12\).jpg');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">12th Street ADU</div>
+                    <div class="project-type">Residential</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location.href='project-474-marine.html'">
+                <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(4\).jpg');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">474 Marine St</div>
+                    <div class="project-type">Residential</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location.href='project-cherryvale.html'">
+                <div class="project-image" style="background-image: url('INSERTHERE');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">Cherryvale</div>
+                    <div class="project-type">Residential</div>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location.href='project-shoreline.html'">
+                <div class="project-image" style="background-image: url('images/Shoreline/9829\ Shoreline\ Dr-5.jpg');"></div>
+                <div class="project-overlay">
+                    <div class="project-name">Shoreline</div>
+                    <div class="project-type">Residential</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="gallery-cta-section">
+            <h2 class="gallery-cta-title">Explore Our Complete Portfolio</h2>
+            <p class="gallery-cta-subtitle">Check out all of our work in the gallery</p>
+            <a href="gallery.html" class="gallery-cta-button">Go To Gallery</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title">Tell Us About Your Project</h2>
+        <div class="contact-info">
+            <p>We would love the opportunity to create with you.</p>
+            <p>Call or email to discuss your project</p>
+            <p><a href="mailto:renee@eleven28.com">renee@eleven28.com</a></p>
+            <p><a href="tel:7208370527">720.837.0527</a></p>
+        </div>
+        <a href="mailto:renee@eleven28.com" class="cta-button">Get In Touch</a>
     </section>
 
     <footer>
-        <div>© 2024 Eleven28 Architecture</div>
-        <div>All Rights Reserved</div>
+        <div>© 2025 Eleven28 LLC - All Rights Reserved</div>
+        <div>Boulder, Colorado</div>
     </footer>
-
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="gallery-modal">
-        <div class="gallery-header">
-            <div class="gallery-title-section">
-                <h2 id="galleryProjectName"></h2>
-                <p id="galleryProjectType"></p>
-            </div>
-            <button class="close-gallery" onclick="closeGallery()">×</button>
-        </div>
-        <div class="gallery-content">
-            <p class="project-description" id="projectDescription"></p>
-            <div class="gallery-grid" id="galleryGrid"></div>
-        </div>
-    </div>
-
+    </main>
+    
     <script>
-        // Project data with gallery images
-        const projects = {
-            lakeside: {
-                name: "Lakeside Residence",
-                type: "Residential",
-                description: "A modern lakeside home that seamlessly blends indoor and outdoor living spaces. Floor-to-ceiling windows capture stunning water views while natural materials create a warm, inviting atmosphere.",
-                images: [
-                    "INSERTHERE", // Image 1
-                    "INSERTHERE", // Image 2
-                    "INSERTHERE", // Image 3
-                    "INSERTHERE", // Image 4
-                    "INSERTHERE", // Image 5
-                    "INSERTHERE"  // Image 6
-                ]
-            },
-            downtown: {
-                name: "Downtown Office",
-                type: "Commercial",
-                description: "A collaborative workspace designed to inspire creativity and productivity. Open floor plans, natural light, and flexible meeting spaces create an environment where ideas flourish.",
-                images: [
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE"
-                ]
-            },
-            coastal: {
-                name: "Coastal Retreat",
-                type: "Residential",
-                description: "Perched on the coast, this retreat embraces its dramatic setting with expansive decks and weather-resistant materials. The design celebrates the raw beauty of the oceanfront location.",
-                images: [
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE"
-                ]
-            },
-            urban: {
-                name: "Urban Loft",
-                type: "Interior Design",
-                description: "An industrial loft transformation that preserves original character while introducing contemporary comfort. Exposed brick, custom millwork, and curated lighting create a sophisticated urban sanctuary.",
-                images: [
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE"
-                ]
-            },
-            mountain: {
-                name: "Mountain Cabin",
-                type: "Residential",
-                description: "A mountain retreat that honors its natural surroundings through sustainable design and local materials. Large windows frame mountain vistas while maintaining intimate, cozy gathering spaces.",
-                images: [
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE"
-                ]
-            },
-            gallery: {
-                name: "Gallery Space",
-                type: "Commercial",
-                description: "A contemporary art gallery with flexible exhibition spaces and carefully controlled lighting. Clean lines and neutral finishes allow artwork to take center stage.",
-                images: [
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE",
-                    "INSERTHERE"
-                ]
+        // Smooth scroll to sections
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offset = 80; // Account for fixed header
+                const sectionTop = section.offsetTop - offset;
+                window.scrollTo({
+                    top: sectionTop,
+                    behavior: 'smooth'
+                });
             }
-        };
-
-        function openGallery(projectId) {
-            const project = projects[projectId];
-            const modal = document.getElementById('galleryModal');
-            
-            document.getElementById('galleryProjectName').textContent = project.name;
-            document.getElementById('galleryProjectType').textContent = project.type;
-            document.getElementById('projectDescription').textContent = project.description;
-            
-            const galleryGrid = document.getElementById('galleryGrid');
-            galleryGrid.innerHTML = '';
-            
-            project.images.forEach(imageUrl => {
-                const imageDiv = document.createElement('div');
-                imageDiv.className = 'gallery-image-container';
-                imageDiv.style.backgroundImage = `url('${imageUrl}')`;
-                galleryGrid.appendChild(imageDiv);
-            });
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
         }
-
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close gallery when clicking outside the content
-        document.getElementById('galleryModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeGallery();
-            }
-        });
-
-        // Close gallery with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeGallery();
-            }
-        });
     </script>
 </body>
-</html>
