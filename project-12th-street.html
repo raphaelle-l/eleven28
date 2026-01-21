@@ -94,9 +94,8 @@
         }
 
         .project-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
+            columns: 3;
+            column-gap: 2rem;
             padding: 0 4%;
             max-width: 1600px;
             margin: 0 auto 6rem;
@@ -104,11 +103,18 @@
 
         .project-image {
             width: 100%;
-            aspect-ratio: 4/3;
-            background-size: cover;
-            background-position: center;
+            height: auto;
+            display: block;
+            margin-bottom: 2rem;
+            break-inside: avoid;
             transition: transform 0.3s ease;
             cursor: pointer;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .project-image:hover {
@@ -184,13 +190,19 @@
             }
 
             .project-images {
-                grid-template-columns: 1fr;
+                columns: 1;
             }
 
             footer {
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
+            }
+        }
+
+        @media (min-width: 969px) and (max-width: 1400px) {
+            .project-images {
+                columns: 2;
             }
         }
     </style>
@@ -203,33 +215,66 @@
 
     <main>
         <section class="project-hero">
-            <h1 class="project-title">12th Street</h1>
-            <p class="project-meta">Residential • 12th St, Boulder CO • Year</p>
+            <h1 class="project-title">12th Street ADU</h1>
+            <p class="project-meta">Residential • 12th St, Boulder CO • 2024</p>
             <div class="project-description">
-                <p>Project description</p>
+                <p>Project description goes here.</p>
             </div>
         </section>
 
         <section class="project-images">
-            <!-- Add image divs here - example below -->
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(10\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(11\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(12\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(13\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(14\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(15\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(16\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(17\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(1\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(2\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(3\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(4\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(5\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(6\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(7\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(8\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/12thstreet/12th\ Street\ ADU\ \(9\).jpg');"></div>
-
+            <!-- 12th Street ADU - 17 images -->
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (1).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (2).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (3).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (4).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (5).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (6).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (7).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (8).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (9).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (10).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (11).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (12).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (13).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (14).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (15).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (16).jpg" alt="12th Street ADU">
+            </div>
+            <div class="project-image">
+                <img src="images/12thstreet/12th Street ADU (17).jpg" alt="12th Street ADU">
+            </div>
         </section>
 
         <section class="contact-section">

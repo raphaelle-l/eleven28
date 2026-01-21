@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Eleven28 Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f5f1eb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4%;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background-color: rgba(245, 241, 235, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+        }
+
+        .back-button {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            opacity: 0.6;
+        }
+
+        .logo {
+            font-weight: 600;
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        .gallery-hero {
+            padding: 4rem 4%;
+            max-width: 1600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .gallery-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-subtitle {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            color: #5a5a5a;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-images {
+            columns: 3;
+            column-gap: 2rem;
+            padding: 0 4%;
+            max-width: 1600px;
+            margin: 0 auto 6rem;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 2rem;
+            break-inside: avoid;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.02);
+        }
+
+        .contact-section {
+            background-color: #2a2421;
+            color: #f5f1eb;
+            padding: 6rem 4%;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: clamp(24px, 5vw, 48px);
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin: 1.5rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info a {
+            color: #f5f1eb;
+            text-decoration: none;
+            border-bottom: 1px solid #f5f1eb;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            margin-top: 2rem;
+            border: 1px solid #f5f1eb;
+            color: #f5f1eb;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f5f1eb;
+            color: #2a2421;
+        }
+
+        footer {
+            background-color: #f5f1eb;
+            padding: 3rem 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 968px) {
+            main {
+                padding-top: 60px;
+            }
+
+            .top-bar {
+                padding: 1rem 4%;
+            }
+
+            .gallery-images {
+                columns: 1;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 969px) and (max-width: 1400px) {
+            .gallery-images {
+                columns: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-bar">
+        <a href="index.html" class="back-button">← BACK TO HOME</a>
+        <div class="logo">ELEVEN28 ARCHITECTURE + DESIGN</div>
+    </nav>
+
+    <main>
+        <section class="gallery-hero">
+            <h1 class="gallery-title">Gallery</h1>
+            <p class="gallery-subtitle">Explore our complete collection of architectural work</p>
+        </section>
+
+        <section class="gallery-images">
+            <!-- 12th Street ADU - 17 images -->
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (1).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (2).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (3).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (4).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (5).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (6).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (7).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (8).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (9).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (10).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (11).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (12).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (13).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (14).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (15).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (16).jpg" alt="12th Street ADU">
+            </div>
+            <div class="gallery-image">
+                <img src="images/12thstreet/12th Street ADU (17).jpg" alt="12th Street ADU">
+            </div>
+
+            <!-- 474 Marine St - 17 images -->
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (1).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (2).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (3).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (4).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (5).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (6).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (7).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (8).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (9).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (10).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (11).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (12).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (13).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (14).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (15).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (16).jpg" alt="474 Marine St">
+            </div>
+            <div class="gallery-image">
+                <img src="images/MarineSt/474.5 Marine (17).jpg" alt="474 Marine St">
+            </div>
+
+            <!-- Shoreline - 35 images -->
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-1.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-2.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-3.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-4.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-5.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-6.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-7.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-8.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-9.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-10.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-11.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-12.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-13.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-14.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-15.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-16 (1).jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-17.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-18 (1).jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-19 (1).jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-20.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-21.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-22.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-23.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-24.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-25.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-26.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-27.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-28.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-29.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-30.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-31.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-32.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-33.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-34.jpg" alt="Shoreline">
+            </div>
+            <div class="gallery-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-35.jpg" alt="Shoreline">
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="contact-title">Interested in Working Together?</h2>
+            <div class="contact-info">
+                <p><a href="mailto:renee@eleven28.com">renee@eleven28.com</a></p>
+                <p><a href="tel:7208370527">720.837.0527</a></p>
+            </div>
+            <a href="index.html#contact" class="cta-button">Get In Touch</a>
+        </section>
+
+        <footer>
+            <div>© 2025 Eleven28 LLC - All Rights Reserved</div>
+            <div>Boulder, Colorado</div>
+        </footer>
+    </main>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Name - Eleven28 Architecture</title>
+    <title>Shoreline - Eleven28 Architecture</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -94,9 +94,8 @@
         }
 
         .project-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
+            columns: 3;
+            column-gap: 2rem;
             padding: 0 4%;
             max-width: 1600px;
             margin: 0 auto 6rem;
@@ -104,11 +103,18 @@
 
         .project-image {
             width: 100%;
-            aspect-ratio: 4/3;
-            background-size: cover;
-            background-position: center;
+            height: auto;
+            display: block;
+            margin-bottom: 2rem;
+            break-inside: avoid;
             transition: transform 0.3s ease;
             cursor: pointer;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .project-image:hover {
@@ -184,13 +190,19 @@
             }
 
             .project-images {
-                grid-template-columns: 1fr;
+                columns: 1;
             }
 
             footer {
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
+            }
+        }
+
+        @media (min-width: 969px) and (max-width: 1400px) {
+            .project-images {
+                columns: 2;
             }
         }
     </style>
@@ -203,35 +215,120 @@
 
     <main>
         <section class="project-hero">
-            <h1 class="project-title">474 Marine St</h1>
-            <p class="project-meta">Residential • Marine St, Boulder CO • Year</p>
+            <h1 class="project-title">Shoreline</h1>
+            <p class="project-meta">Residential • Shoreline Dr, Boulder CO • 2024</p>
             <div class="project-description">
-                <p>Project description</p>
+                <p>Project description goes here.</p>
             </div>
         </section>
 
         <section class="project-images">
-            <!-- Add image divs here - example below -->
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(10\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(11\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(12\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(13\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(14\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(15\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(16\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(17\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(1\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(2\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(3\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(4\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(5\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(6\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(7\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(8\).jpg');"></div>
-            <div class="project-image" style="background-image: url('images/MarineSt/474.5\ Marine\ \(9\).jpg');"></div>
-
-
-
+            <!-- Shoreline - 35 images -->
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-1.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-2.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-3.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-4.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-5.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-6.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-7.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-8.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-9.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-10.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-11.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-12.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-13.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-14.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-15.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-16 (1).jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-17.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-18 (1).jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-19 (1).jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-20.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-21.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-22.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-23.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-24.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-25.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-26.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-27.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-28.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-29.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-30.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-31.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-32.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-33.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-34.jpg" alt="Shoreline">
+            </div>
+            <div class="project-image">
+                <img src="images/Shoreline/9829 Shoreline Dr-35.jpg" alt="Shoreline">
+            </div>
         </section>
 
         <section class="contact-section">
